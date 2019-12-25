@@ -1,0 +1,36 @@
+<div class="content">
+  <nz-divider nzText="Names" nzOrientation="left"></nz-divider>
+  <div class="type">
+    <span>Accidental Type:</span>
+    <button
+      nz-button
+      nzShape="circle"
+      [nzType]="checkType('#') ? 'primary' : ''"
+      (click)="selectType('#')"
+    >
+      #
+    </button>
+    <button
+      nz-button
+      nzShape="circle"
+      [nzType]="checkType('b') ? 'primary' : ''"
+      (click)="selectType('b')"
+    >
+      b
+    </button>
+  </div>
+
+  <div class="notes">
+    <button
+      *ngFor="let note of names"
+      nz-button
+      nzShape="circle"
+      nzSize="large"
+      nzType="primary"
+      [routerLink]="['/dashboard/notes', note]"
+      routerLinkActive="active"
+    >
+      {{ note }}
+    </button>
+  </div>
+</div>

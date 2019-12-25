@@ -1,0 +1,10 @@
+<p>property-selector works!</p>
+<div class="property" nz-row>
+  <div class="prev" (click)="setNewProperty(-1)" nz-col nzSpan="8">
+    <i nz-icon nzType="left"></i>
+  </div>
+  <div class="property-name" nz-col nzSpan="8">{{ property | titlecase }}</div>
+  <div class="next" (click)="setNewProperty(1)" nz-col nzSpan="8">
+    <i nz-icon nzType="right"></i>
+  </div>
+</div>

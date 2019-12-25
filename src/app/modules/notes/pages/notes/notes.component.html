@@ -1,0 +1,11 @@
+<div class="container">
+  <div>
+    <app-note-letters [letters]="letters"></app-note-letters>
+  </div>
+  <div>
+    <app-note-names
+      [names]="names"
+      (typeSelected)="setNameType($event)"
+    ></app-note-names>
+  </div>
+</div>
