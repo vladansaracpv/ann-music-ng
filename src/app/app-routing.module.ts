@@ -10,6 +10,10 @@ const routes: Routes = [
     loadChildren: () => import('@modules/notes/notes.module').then(m => m.NotesModule),
   },
   {
+    path: 'chords',
+    loadChildren: () => import('@modules/chords/chords.module').then(m => m.ChordsModule),
+  },
+  {
     path: '',
     redirectTo: 'notes',
     pathMatch: 'full'

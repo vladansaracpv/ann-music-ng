@@ -1,11 +1,11 @@
 // Routing module
-
-import { NoteResolver } from './shared';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '@core/guards';
 
-import { NotesComponent, NoteComponent } from './pages';
+import { NoteComponent, NotesComponent } from './pages';
+import { NoteResolver } from './shared';
+
 
 
 const routes: Routes = [

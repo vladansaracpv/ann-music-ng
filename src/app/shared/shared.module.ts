@@ -18,6 +18,7 @@ const EXPORTABLES = [BtnGroupComponent, PropertySelectorComponent];
   ],
   exports: [
     AntdModule,
+    CommonModule,
     ReactiveFormsModule,
     ...EXPORTABLES
   ]
