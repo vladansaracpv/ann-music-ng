@@ -1,3 +1,4 @@
+import { NoteResolver } from './shared';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -9,7 +10,8 @@ const routes: Routes = [
   {
     path: ':id',
     component: NoteComponent,
-    data: { title: 'Notes', returnUrl: '/dashboard/notes' }
+    data: { title: 'Notes', returnUrl: '/dashboard/notes' },
+    resolve: { note: NoteResolver },
   },
 ];
 

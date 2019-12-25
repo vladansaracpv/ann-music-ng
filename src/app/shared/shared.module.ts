@@ -1,6 +1,7 @@
 import { AntdModule } from './antd.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BtnGroupComponent, PropertySelectorComponent } from './components';
 
 const DECLARABLES = [BtnGroupComponent, PropertySelectorComponent];
@@ -12,10 +13,12 @@ const EXPORTABLES = [BtnGroupComponent, PropertySelectorComponent];
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     AntdModule,
   ],
   exports: [
     AntdModule,
+    ReactiveFormsModule,
     ...EXPORTABLES
   ]
 })

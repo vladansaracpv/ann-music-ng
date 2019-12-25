@@ -1,0 +1,40 @@
+<div class="content">
+  <nz-divider nzText="Distance" nzOrientation="left"></nz-divider>
+  <form
+    nz-form
+    [formGroup]="distanceForm"
+    nzLayout="inline"
+    (ngSubmit)="calculateDistance()"
+    class="distance-form"
+  >
+    <nz-form-item>
+      <nz-form-label nzRequired nzFor="from">From</nz-form-label>
+      <nz-form-control nzErrorTip="The input is not valid Note">
+        <input nz-input formControlName="from" id="from" placeholder="C4" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label nzRequired nzFor="to">To</nz-form-label>
+      <nz-form-control nzErrorTip="The input is not valid Note">
+        <input nz-input formControlName="to" id="to" placeholder="B5" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label nzRequired nzFor="metric">Metric</nz-form-label>
+      <nz-form-control nzErrorTip="The input is not valid Note">
+        <nz-select id="metric" formControlName="metric" nzPlaceHolder="Metric">
+          <nz-option nzValue="midi" nzLabel="Midi"></nz-option>
+          <nz-option nzValue="frequency" nzLabel="Frequency"></nz-option>
+          <nz-option nzValue="chroma" nzLabel="Chroma"></nz-option>
+          <nz-option nzValue="octave" nzLabel="Octave"></nz-option>
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control>
+        <button nz-button nzType="primary">Submit</button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+  <div class="result">Result: {{ result }}</div>
+</div>
