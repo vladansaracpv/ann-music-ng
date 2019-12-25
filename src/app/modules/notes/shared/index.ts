@@ -1,7 +1,10 @@
 // Shared
 
 // Pipes
-export * from './pipes';
+export * from './hertz.pipe';
 
 // Resolvers
-export * from './resolvers';
+export * from './note-resolver';
+
+// Services
+export * from './notes.service';

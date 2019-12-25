@@ -1,4 +1,4 @@
-import { NotesService } from '@core/services';
+import { NotesService } from './notes.service';
 import { NoteProps } from 'ann-music-note';
 import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot, Router } from '@angular/router';

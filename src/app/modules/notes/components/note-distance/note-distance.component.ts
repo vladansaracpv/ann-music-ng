@@ -1,4 +1,4 @@
-import { NotesService } from '@core/services/notes.service';
+import { NotesService } from '../../shared';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
