@@ -1,38 +1,29 @@
-import { AuthGuard } from '@core/guards';
+// Routed module (contains lazy-loaded route)
+
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { NotFoundErrorComponent, LayoutComponent } from '@modules/layout';
+import { NotFoundErrorComponent } from '@modules/layout';
 
 const routes: Routes = [
   {
+    path: 'notes',
+    loadChildren: () => import('@modules/notes/notes.module').then(m => m.NotesModule),
+  },
+  {
     path: '',
-    redirectTo: '/dashboard/notes',
+    redirectTo: 'notes',
     pathMatch: 'full'
   },
   {
-    path: 'dashboard',
-    component: LayoutComponent,
-    canActivate: [AuthGuard],
-    children: [
-      { path: '', redirectTo: 'notes', pathMatch: 'full' },
-      {
-        path: 'notes',
-        loadChildren: () => import('@modules/notes/notes.module').then(m => m.NotesModule),
-        data: { title: 'Notes', returnUrl: '/dashboard/notes' }
-      },
-      { path: '**', component: NotFoundErrorComponent }
-    ]
+    path: '**',
+    component: NotFoundErrorComponent
   },
-  { path: '**', component: NotFoundErrorComponent }
+
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, {
-      enableTracing: false,
-      preloadingStrategy: PreloadAllModules
-    })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
-  exports: [RouterModule],
 })
 export class AppRoutingModule { }

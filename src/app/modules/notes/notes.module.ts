@@ -1,3 +1,5 @@
+// Feature (routed) module
+
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { SharedModule } from '@shared/shared.module';
@@ -16,8 +18,6 @@ const DECLARABLES = [
   HertzPipe
 ];
 
-const EXPORTABLES = [...DECLARABLES];
-
 @NgModule({
   declarations: [
     ...DECLARABLES,
@@ -27,8 +27,5 @@ const EXPORTABLES = [...DECLARABLES];
     SharedModule,
     NotesRoutingModule,
   ],
-  exports: [
-    ...EXPORTABLES
-  ]
 })
 export class NotesModule { }
