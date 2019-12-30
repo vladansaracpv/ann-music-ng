@@ -1,0 +1,43 @@
+<form
+  nz-form
+  nzLayout="inline"
+  [formGroup]="noteForm"
+  (ngSubmit)="submitForm()"
+>
+  <nz-form-item>
+    <nz-form-label>Name</nz-form-label>
+    <nz-form-control>
+      <input nz-input formControlName="name" placeholder="A#" />
+      <p class="error" *ngIf="name.errors.required">Please input note</p>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label>Octave</nz-form-label>
+    <nz-form-control>
+      <nz-input-number formControlName="octave" [nzStep]="1"></nz-input-number>
+      <p class="error" *ngIf="octave.errors && octave.errors.required">
+        Please input octave
+      </p>
+      <p class="error">Valid octave is between 3 and 5</p>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control>
+      <button nz-button nzType="primary">Submit</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>
+<p>Name status:</p>
+<ul>
+  <li>Pristine: {{ name.pristine }}</li>
+  <li>Dirty: {{ name.dirty }}</li>
+  <li>Touched: {{ name.touched }}</li>
+  <li>Untouched: {{ name.untouched }}</li>
+</ul>
+<p>Octave status:</p>
+<ul>
+  <li>Pristine: {{ octave.pristine }}</li>
+  <li>Dirty: {{ octave.dirty }}</li>
+  <li>Touched: {{ octave.touched }}</li>
+  <li>Untouched: {{ octave.untouched }}</li>
+</ul>

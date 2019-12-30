@@ -1,3 +1,4 @@
+import { NoteEditComponent } from './components/note-edit/note-edit.component';
 // Routing module
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -14,6 +15,10 @@ const routes: Routes = [
     component: NotesComponent,
     data: { title: 'Notes', returnUrl: '/' },
     canActivate: [AuthGuard],
+  },
+  {
+    path: 'edit',
+    component: NoteEditComponent
   },
   {
     path: ':id',
