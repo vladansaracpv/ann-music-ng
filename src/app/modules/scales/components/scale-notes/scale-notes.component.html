@@ -1,0 +1,10 @@
+<button
+  *ngFor="let note of chromaticScale"
+  nz-button
+  [nzType]="checkType(note) ? 'primary' : ''"
+  nzSize="large"
+  nzShape="circle"
+  class="scale-note"
+>
+  {{ note }}
+</button>

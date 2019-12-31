@@ -14,6 +14,10 @@ const routes: Routes = [
     loadChildren: () => import('@modules/chords/chords.module').then(m => m.ChordsModule),
   },
   {
+    path: 'scales',
+    loadChildren: () => import('@modules/scales/scales.module').then(m => m.ScalesModule),
+  },
+  {
     path: '',
     redirectTo: 'notes',
     pathMatch: 'full'

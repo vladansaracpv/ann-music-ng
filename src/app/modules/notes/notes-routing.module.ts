@@ -15,16 +15,18 @@ const routes: Routes = [
     component: NotesComponent,
     data: { title: 'Notes', returnUrl: '/' },
     canActivate: [AuthGuard],
-  },
-  {
-    path: 'edit',
-    component: NoteEditComponent
-  },
-  {
-    path: ':id',
-    component: NoteComponent,
-    data: { title: 'Notes', returnUrl: '/notes' },
-    resolve: { note: NoteResolver },
+    children: [
+      {
+        path: 'edit',
+        component: NoteEditComponent
+      },
+      {
+        path: ':id',
+        component: NoteComponent,
+        data: { title: 'Notes', returnUrl: '/notes' },
+        resolve: { note: NoteResolver },
+      },
+    ]
   },
 ];
 

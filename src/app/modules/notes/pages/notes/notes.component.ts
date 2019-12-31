@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./notes.component.scss']
 })
 export class NotesComponent implements OnInit {
-  letters: string;
+  letters: string[];
   names: string[];
   type = '#';
 
@@ -25,7 +25,7 @@ export class NotesComponent implements OnInit {
 
   getLetters() {
     this.noteService.getNoteLetters().subscribe((letters) => {
-      this.letters = letters;
+      this.letters = letters.split('');
     });
   }
 
