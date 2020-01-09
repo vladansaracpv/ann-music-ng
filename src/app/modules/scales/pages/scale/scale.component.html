@@ -26,8 +26,9 @@
 
 <div class="section">
   <app-chord-types
-    [types]="tags"
+    [types]="allTags"
     (selected)="chordSelected($event)"
+    (allSelected)="getAllTypes($event)"
   ></app-chord-types>
 </div>
 

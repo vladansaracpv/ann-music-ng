@@ -11,12 +11,14 @@ const routes: Routes = [
     component: ChordsComponent,
     data: { title: 'Chords', returnUrl: '/' },
     canActivate: [AuthGuard],
-  },
-  {
-    path: ':id',
-    component: ChordComponent,
-    data: { title: 'Chords', returnUrl: '/chords' },
-    resolve: { chord: ChordResolver },
+    children: [
+      {
+        path: ':id',
+        component: ChordComponent,
+        data: { title: 'Chords', returnUrl: '/chords' },
+        resolve: { chord: ChordResolver },
+      },
+    ]
   },
 ];
 

@@ -13,6 +13,7 @@ export class ScaleComponent implements OnInit {
   scale: ScaleProps;
   notes: string[];
   tags: string[];
+  allTags: string[];
   scaleChords: ScaleChords[] = [];
   chords: string[][];
 
@@ -22,6 +23,7 @@ export class ScaleComponent implements OnInit {
     this.route.data.subscribe((data) => {
       this.scale = data.scale;
       this.tags = [...data.chords, 'm', 'dim'];
+      this.allTags = this.tags;
       this.notes = this.scale.notes.map(note => note.replace(/[0-9]/, ''));
       console.log('Scale', this.scale);
     });
@@ -44,6 +46,16 @@ export class ScaleComponent implements OnInit {
       result = row;
     });
     return result;
+  }
+
+  getAllTypes(checked: boolean) {
+    if (checked) {
+      this.scaleService.getAllChordTypes().subscribe(data => {
+        this.allTags = data;
+      });
+    } else {
+      this.allTags = this.tags;
+    }
   }
 
 }

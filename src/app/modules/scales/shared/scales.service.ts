@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Scale, SCALE, ScaleProps } from 'ann-music-scale';
 import { PC } from 'ann-music-pc';
-import { Chord } from 'ann-music-chord';
+import { Chord, CHORD } from 'ann-music-chord';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +19,10 @@ export class ScalesService {
   getScaleChords(name: string): Observable<string[]> {
     const chords = SCALE.chords(name.split('-').join(' '));
     return of(chords);
+  }
+
+  getAllChordTypes(): Observable<string[]> {
+    return of(CHORD.chordTypesList.sort());
   }
 
   checkChordMembership(chord: string, notes: string[]): Observable<string[]> {

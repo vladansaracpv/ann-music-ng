@@ -9,7 +9,9 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class ChordTypesComponent implements OnInit {
   @Input() types: string[];
   @Output() selected = new EventEmitter<{ checked: boolean, tag: string }>();
+  @Output() allSelected = new EventEmitter<boolean>();
 
+  checked = false;
   selectedTags: string[] = [];
 
   constructor(private chordService: ChordsService) { }
@@ -25,6 +27,10 @@ export class ChordTypesComponent implements OnInit {
       this.selectedTags = this.selectedTags.filter(t => t !== tag);
     }
     this.selected.emit({ checked, tag });
+  }
+
+  getAllTypes(checked: boolean) {
+    this.allSelected.emit(checked);
   }
 
 }
