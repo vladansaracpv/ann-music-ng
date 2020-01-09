@@ -1,8 +1,8 @@
 <div class="content">
-  <nz-divider nzText="Names" nzOrientation="left"></nz-divider>
+  <!-- <nz-divider nzText="Chromatic Scale" nzOrientation="left"></nz-divider> -->
   <div class="type">
     <span>Accidental Type:</span>
-    <button
+    <!-- <button
       nz-button
       nzShape="circle"
       [nzType]="checkType('#') ? 'primary' : ''"
@@ -17,19 +17,18 @@
       (click)="selectType('b')"
     >
       b
-    </button>
+    </button> -->
     <nz-radio-group
       [(ngModel)]="type"
       [nzButtonStyle]="'solid'"
       class="radio-group"
     >
-      <label nz-radio-button nzValue="#" (click)="selectType('#')">Sharp</label>
-      <label nz-radio-button nzValue="b" (click)="selectType('b')">Flat</label>
+      <label nz-radio-button nzValue="#" (click)="selectType('#')">#</label>
+      <label nz-radio-button nzValue="b" (click)="selectType('b')">b</label>
     </nz-radio-group>
   </div>
-  <div class="type"></div>
   <div class="notes">
-    <div nz-row>
+    <!-- <div nz-row>
       <div
         *ngFor="let note of names"
         nz-card-grid
@@ -41,7 +40,7 @@
       >
         {{ note }}
       </div>
-    </div>
+    </div> -->
     <button
       *ngFor="let note of names"
       nz-button

@@ -12,3 +12,8 @@ nz-page-header {
 .section {
   margin: 16px auto;
 }
+
+.ant-list-bordered.ant-list-lg .ant-list-footer,
+.ant-list-bordered.ant-list-lg .ant-list-header {
+  font-weight: bold;
+}

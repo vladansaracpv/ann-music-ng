@@ -1,11 +1,11 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-note-names',
-  templateUrl: './note-names.component.html',
-  styleUrls: ['./note-names.component.scss']
+  selector: 'app-note-list',
+  templateUrl: './note-list.component.html',
+  styleUrls: ['./note-list.component.scss']
 })
-export class NoteNamesComponent implements OnInit {
+export class NoteListComponent implements OnInit {
   @Input() names: string[];
   @Output() typeSelected = new EventEmitter<string>();
 

@@ -1,3 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./app/styles/_base.scss";
 @import "../node_modules/ng-zorro-antd/ng-zorro-antd.min.css";
+
+.ant-list-bordered.ant-list-lg .ant-list-footer,
+.ant-list-bordered.ant-list-lg .ant-list-header {
+  font-weight: bold;
+}
+
+.ant-descriptions-item-label {
+  font-weight: 500;
+}
+
+.ant-page-header {
+  padding: 24px;
+}

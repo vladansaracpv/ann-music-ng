@@ -11,18 +11,12 @@ const routes: Routes = [
     component: ScalesComponent,
     data: { title: 'Scales', returnUrl: '/' },
     canActivate: [AuthGuard],
-    children: [
-      {
-        path: 'edit',
-        component: ScaleEditComponent
-      },
-      {
-        path: ':id',
-        component: ScaleComponent,
-        data: { title: 'Scales', returnUrl: '/scales' },
-        resolve: { scale: ScaleResolver },
-      },
-    ]
+  },
+  {
+    path: ':id',
+    component: ScaleComponent,
+    data: { title: 'Scales', returnUrl: '/scales' },
+    resolve: { scale: ScaleResolver },
   },
 
 ];

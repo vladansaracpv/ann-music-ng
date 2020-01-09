@@ -1,16 +1,16 @@
 <div class="container">
-  <div class="section">
+  <!-- <div class="section">
     <app-note-letters [letters]="letters"></app-note-letters>
-  </div>
+  </div> -->
   <div class="section">
-    <app-note-names
+    <app-note-list
       [names]="names"
       (typeSelected)="setNameType($event)"
-    ></app-note-names>
+    ></app-note-list>
   </div>
-  <div class="section">
+  <!-- <div class="section">
     <app-note-distance></app-note-distance>
-  </div>
+  </div> -->
   <div class="section">
     <router-outlet></router-outlet>
   </div>

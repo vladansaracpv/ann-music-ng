@@ -1,1 +1,18 @@
-<p>scale works!</p>
+<nz-page-header (nzBack)="onBack()" nzBackIcon nzTitle="Scales">
+</nz-page-header>
+
+<nz-descriptions nzTitle="Basic Info" nzLayout="vertical">
+  <nz-descriptions-item nzTitle="Name">
+    {{ scale.name }}
+  </nz-descriptions-item>
+  <nz-descriptions-item nzTitle="Notes">{{ scale.notes }}</nz-descriptions-item>
+  <nz-descriptions-item nzTitle="Intervals">{{
+    scale.intervals
+  }}</nz-descriptions-item>
+  <nz-descriptions-item nzTitle="Formula">{{
+    scale.formula
+  }}</nz-descriptions-item>
+  <nz-descriptions-item nzTitle="Signature">
+    {{ scale.signature }}
+  </nz-descriptions-item>
+</nz-descriptions>

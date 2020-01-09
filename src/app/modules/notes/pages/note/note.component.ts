@@ -11,6 +11,7 @@ export class NoteComponent implements OnInit {
   title: string;
   returnUrl: string;
   note: NoteProps;
+
   constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -18,6 +19,7 @@ export class NoteComponent implements OnInit {
       this.title = data.title;
       this.returnUrl = data.returnUrl;
       this.note = data.note;
+      console.log('Note', this.note);
     });
   }
 
