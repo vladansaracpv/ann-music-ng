@@ -1,18 +1,36 @@
-<nz-page-header (nzBack)="onBack()" nzBackIcon nzTitle="Scales">
-</nz-page-header>
+<!-- <nz-page-header (nzBack)="onBack()" nzBackIcon nzTitle="Scales">
+</nz-page-header> -->
 
-<nz-descriptions nzTitle="Basic Info" nzLayout="vertical">
-  <nz-descriptions-item nzTitle="Name">
-    {{ scale.name }}
-  </nz-descriptions-item>
-  <nz-descriptions-item nzTitle="Notes">{{ scale.notes }}</nz-descriptions-item>
-  <nz-descriptions-item nzTitle="Intervals">{{
-    scale.intervals
-  }}</nz-descriptions-item>
-  <nz-descriptions-item nzTitle="Formula">{{
-    scale.formula
-  }}</nz-descriptions-item>
-  <nz-descriptions-item nzTitle="Signature">
-    {{ scale.signature }}
-  </nz-descriptions-item>
-</nz-descriptions>
+<div class="section">
+  <nz-descriptions nzTitle="Basic Info" nzLayout="vertical">
+    <nz-descriptions-item nzTitle="Name">
+      {{ scale.name }}
+    </nz-descriptions-item>
+    <nz-descriptions-item nzTitle="Aliases">
+      {{ scale.aliases.join(", ") }}
+    </nz-descriptions-item>
+    <nz-descriptions-item nzTitle="Signature">
+      {{ "" }}
+    </nz-descriptions-item>
+    <nz-descriptions-item nzTitle="Notes">{{
+      notes.join(" - ")
+    }}</nz-descriptions-item>
+    <nz-descriptions-item nzTitle="Intervals">{{
+      scale.intervals.join(" - ")
+    }}</nz-descriptions-item>
+    <nz-descriptions-item nzTitle="Formula">{{
+      scale.formula
+    }}</nz-descriptions-item>
+  </nz-descriptions>
+</div>
+
+<div class="section">
+  <app-chord-types
+    [types]="tags"
+    (selected)="chordSelected($event)"
+  ></app-chord-types>
+</div>
+
+<div class="section">
+  <app-scale-chords [notes]="notes" [chords]="chords"></app-scale-chords>
+</div>

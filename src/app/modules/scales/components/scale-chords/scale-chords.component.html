@@ -1,1 +1,21 @@
-<p>scale-chords works!</p>
+<nz-table
+  *ngIf="chords && chords.length > 0"
+  nzBordered
+  [nzData]="chords"
+  [nzShowPagination]="false"
+  class="chords-table"
+>
+  <thead>
+    <tr>
+      <th [nzWidth]="'80px'">Chord</th>
+      <th *ngFor="let note of notes" [nzWidth]="'80px'">
+        {{ note }}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of chords">
+      <td *ngFor="let item of data">{{ item }}</td>
+    </tr>
+  </tbody>
+</nz-table>

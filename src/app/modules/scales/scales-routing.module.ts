@@ -1,5 +1,4 @@
-import { ScaleResolver } from './shared/scale-resolver';
-import { ScaleEditComponent } from './components';
+import { ScaleResolver, ScaleChordsResolver } from './shared';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ScaleComponent, ScalesComponent } from './pages';
@@ -11,13 +10,16 @@ const routes: Routes = [
     component: ScalesComponent,
     data: { title: 'Scales', returnUrl: '/' },
     canActivate: [AuthGuard],
+    children: [
+      {
+        path: ':id',
+        component: ScaleComponent,
+        data: { title: 'Scales', returnUrl: '/scales' },
+        resolve: { scale: ScaleResolver, chords: ScaleChordsResolver },
+      },
+    ]
   },
-  {
-    path: ':id',
-    component: ScaleComponent,
-    data: { title: 'Scales', returnUrl: '/scales' },
-    resolve: { scale: ScaleResolver },
-  },
+
 
 ];
 

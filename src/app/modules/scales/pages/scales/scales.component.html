@@ -1,16 +1,79 @@
-<!-- <nz-divider nzText="Scales by number of notes" nzOrientation="left"></nz-divider> -->
-<!-- <h2>Scales by number of notes</h2> -->
+<!-- <div class="section">
+  <h3>By number of Notes</h3>
+  <div class="scale-size">
+    <div class="scale-size-card">
+      <span>5</span>
+    </div>
+    <div class="scale-size-card">
+      <span>6</span>
+    </div>
+    <div class="scale-size-card">
+      <span>7</span>
+    </div>
+    <div class="scale-size-card">
+      <span>8</span>
+    </div>
+    <div class="scale-size-card">
+      <span>9</span>
+    </div>
+    <div class="scale-size-card">
+      <span>12</span>
+    </div>
+  </div>
+</div> -->
 
-<!-- <ul
-  nz-list
-  [nzDataSource]="data"
-  nzBordered
-  nzSize="large"
-  [nzHeader]="'5 Notes'"
-  [nzRenderItem]="largeItem"
->
-  <ng-template #largeItem let-item>
-    <li nz-list-item [nzContent]="item" nzNoFlex></li>
-  </ng-template>
-</ul> -->
-<app-scale-notes [notes]="notes"></app-scale-notes>
+<div class="section">
+  <div class="scale-tonic">
+    <form
+      nz-form
+      [formGroup]="scaleForm"
+      [nzLayout]="'inline'"
+      (ngSubmit)="selectScale()"
+    >
+      <nz-form-item>
+        <nz-form-label nzFor="tonic">
+          Tonic
+        </nz-form-label>
+        <nz-form-control nzErrorTip="Select tonic note">
+          <nz-select formControlName="tonic" nzPlaceHolder="C">
+            <nz-option
+              *ngFor="let note of notes"
+              [nzValue]="note"
+              [nzLabel]="note"
+            ></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label nzFor="type">
+          Type
+        </nz-form-label>
+        <nz-form-control nzErrorTip="Select scale type">
+          <nz-select
+            nzShowSearch
+            formControlName="type"
+            nzPlaceHolder="pentatonic"
+            class="scale-type"
+          >
+            <nz-option
+              *ngFor="let type of scaleTypes"
+              [nzValue]="type"
+              [nzLabel]="type"
+            ></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control>
+          <button nz-button nzType="primary">
+            Details
+          </button>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </div>
+</div>
+
+<div class="scale-content">
+  <router-outlet></router-outlet>
+</div>

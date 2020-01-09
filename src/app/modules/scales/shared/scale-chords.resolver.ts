@@ -7,12 +7,12 @@ import { catchError } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class ScaleResolver implements Resolve<string[]> {
+export class ScaleChordsResolver implements Resolve<string[]> {
 
   constructor(private router: Router, private scaleService: ScalesService) { }
 
   resolve(route: ActivatedRouteSnapshot): Observable<any> {
-    return this.scaleService.getScaleByName(route.params['id']).pipe(
+    return this.scaleService.getScaleChords(route.params['id']).pipe(
       catchError((err) => this.router.navigateByUrl('/'))
     );
   }

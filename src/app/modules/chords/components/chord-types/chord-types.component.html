@@ -1,0 +1,11 @@
+<p>
+  <strong>Chord Types: </strong>
+</p>
+<nz-tag
+  *ngFor="let tag of types"
+  nzMode="checkable"
+  [nzChecked]="selectedTags.indexOf(tag) > -1"
+  (nzCheckedChange)="handleChange($event, tag)"
+>
+  {{ tag }}
+</nz-tag>

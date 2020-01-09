@@ -1,19 +1,30 @@
-.ant-select {
-  min-width: 100px;
-}
-nz-page-header {
-  border: 1px solid rgb(235, 237, 240);
-}
-
-.content {
-  margin: 24px auto;
+.scale-size {
+  display: flex;
+  max-width: 500px;
+  justify-content: space-between;
 }
 
-.section {
-  margin: 16px auto;
+.scale-size-card {
+  width: 75px;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  border-radius: 16px;
+  background: #1890ff;
+  color: #fff;
 }
 
-.ant-list-bordered.ant-list-lg .ant-list-footer,
-.ant-list-bordered.ant-list-lg .ant-list-header {
-  font-weight: bold;
+nz-select {
+  margin-right: 8px;
+  width: 80px;
+
+  &.scale-type {
+    width: 230px;
+  }
+}
+
+[nz-form] {
+  max-width: 900px;
 }

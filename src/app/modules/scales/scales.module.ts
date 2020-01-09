@@ -1,3 +1,4 @@
+import { ChordsModule } from '@modules/chords/chords.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -13,7 +14,8 @@ import { ScaleChordsComponent } from './components/scale-chords/scale-chords.com
   imports: [
     CommonModule,
     SharedModule,
-    ScalesRoutingModule
+    ScalesRoutingModule,
+    ChordsModule,
   ]
 })
 export class ScalesModule { }
