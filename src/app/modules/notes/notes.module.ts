@@ -3,7 +3,10 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '@shared/shared.module';
 
-import { NoteDistanceComponent, NoteLettersComponent, NoteListComponent, NoteEditComponent, NoteContainerComponent } from './components';
+import {
+  NoteDistanceComponent, NoteEditComponent,
+  NoteListComponent, NoteAccidentalTypeComponent
+} from './components';
 import { NotesRoutingModule } from './notes-routing.module';
 import { NoteComponent, NotesComponent } from './pages';
 import { HertzPipe } from './shared';
@@ -11,7 +14,6 @@ import { HertzPipe } from './shared';
 const DECLARABLES = [
   NotesComponent,
   NoteComponent,
-  NoteLettersComponent,
   NoteListComponent,
   NoteEditComponent,
   NoteDistanceComponent,
@@ -22,7 +24,7 @@ const DECLARABLES = [
   declarations: [
     ...DECLARABLES,
     NoteEditComponent,
-    NoteContainerComponent,
+    NoteAccidentalTypeComponent,
   ],
   imports: [
     SharedModule,

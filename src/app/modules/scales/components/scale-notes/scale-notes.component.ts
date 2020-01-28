@@ -1,5 +1,5 @@
+import { NOTE } from 'ann-music-note';
 import { Component, OnInit, Input } from '@angular/core';
-
 
 @Component({
   selector: 'app-scale-notes',
@@ -7,16 +7,18 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./scale-notes.component.scss']
 })
 export class ScaleNotesComponent implements OnInit {
-  @Input() notes: string[];
-  chromaticScale = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B'];
+  @Input() notes?: string[];
+  @Input() accidental: string;
 
-  constructor() { }
+  chromaticScale: string[];
 
   ngOnInit() {
+    this.chromaticScale = this.accidental === '#' ? NOTE.SHARPS : NOTE.FLATS;
+    this.notes = this.notes ? this.notes : this.chromaticScale;
   }
 
-  checkType(note: string): boolean {
-    return this.notes.includes(note) ? true : false;
+  checkType(note: string): string {
+    return this.notes.includes(note) ? 'primary' : '';
   }
 
 

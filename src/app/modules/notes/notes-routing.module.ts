@@ -1,25 +1,16 @@
-import { NoteEditComponent } from './components/note-edit/note-edit.component';
-// Routing module
+// Routed module
+import { NoteEditComponent } from './components';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from '@core/guards';
-
 import { NoteComponent, NotesComponent } from './pages';
 import { NoteResolver } from './shared';
-
-
 
 const routes: Routes = [
   {
     path: '',
     component: NotesComponent,
     data: { title: 'Notes', returnUrl: '/' },
-    canActivate: [AuthGuard],
     children: [
-      {
-        path: 'edit',
-        component: NoteEditComponent
-      },
       {
         path: ':id',
         component: NoteComponent,

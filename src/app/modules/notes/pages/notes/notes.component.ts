@@ -1,3 +1,4 @@
+import { NOTE } from 'ann-music-note';
 import { NotesService } from '../../shared';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,13 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotesComponent implements OnInit {
   letters: string[];
-  names: string[];
+  notes: string[];
   type = '#';
 
   constructor(private noteService: NotesService) { }
 
   ngOnInit() {
-    this.getLetters();
     this.getNames();
   }
 
@@ -23,15 +23,9 @@ export class NotesComponent implements OnInit {
     this.getNames();
   }
 
-  getLetters() {
-    this.noteService.getNoteLetters().subscribe((letters) => {
-      this.letters = letters.split('');
-    });
-  }
-
   getNames() {
     this.noteService.getNoteNames(this.type).subscribe((names) => {
-      this.names = names;
+      this.notes = names;
     });
   }
 

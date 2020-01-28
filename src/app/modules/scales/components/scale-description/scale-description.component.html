@@ -1,0 +1,20 @@
+<nz-descriptions nzTitle="Basic Info" nzLayout="vertical">
+  <nz-descriptions-item nzTitle="Name">
+    {{ scale.name }}
+  </nz-descriptions-item>
+  <nz-descriptions-item nzTitle="Aliases">
+    {{ scale.aliases.join(", ") }}
+  </nz-descriptions-item>
+  <nz-descriptions-item nzTitle="Signature">
+    {{ "" }}
+  </nz-descriptions-item>
+  <nz-descriptions-item nzTitle="Notes">{{
+    notes.join(" - ")
+  }}</nz-descriptions-item>
+  <nz-descriptions-item nzTitle="Intervals">{{
+    scale.intervals.join(" - ")
+  }}</nz-descriptions-item>
+  <nz-descriptions-item nzTitle="Formula">{{
+    scale.formula
+  }}</nz-descriptions-item>
+</nz-descriptions>

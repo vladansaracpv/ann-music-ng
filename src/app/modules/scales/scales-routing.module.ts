@@ -1,8 +1,9 @@
-import { ScaleResolver, ScaleChordsResolver } from './shared';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { ScaleComponent, ScalesComponent } from './pages';
+import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '@core/guards';
+
+import { ScaleComponent, ScalesComponent } from './pages';
+import { ScaleChordsResolver, ScaleResolver } from './shared';
 
 const routes: Routes = [
   {

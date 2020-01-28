@@ -1,0 +1,30 @@
+<nz-button-group>
+  <button
+    nz-button
+    [nzType]="checkType(types.NATURAL)"
+    (click)="selectType(types.NATURAL)"
+  >
+    Natural
+  </button>
+  <button
+    nz-button
+    [nzType]="checkType(types.SHARP)"
+    (click)="selectType(types.SHARP)"
+  >
+    Sharp
+  </button>
+  <button
+    nz-button
+    [nzType]="checkType(types.FLAT)"
+    (click)="selectType(types.FLAT)"
+  >
+    Flat
+  </button>
+  <button
+    nz-button
+    [nzType]="checkType(types.ALL)"
+    (click)="selectType(types.ALL)"
+  >
+    All
+  </button>
+</nz-button-group>

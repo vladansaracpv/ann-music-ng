@@ -19,7 +19,7 @@ export class NotesService {
   }
 
   getNoteNames(type: string): Observable<string[]> {
-    return type === '#' ? of(NOTE.SHARPS) : of(NOTE.FLATS);
+    return of(NOTE.notes(type));
   }
 
   getNoteByName(name: NoteName): Observable<NoteProps> {

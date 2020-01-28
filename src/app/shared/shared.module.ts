@@ -2,10 +2,10 @@ import { AntdModule } from './antd.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { BtnGroupComponent, PropertySelectorComponent } from './components';
+import { PropertySelectorComponent } from './components';
 
-const DECLARABLES = [BtnGroupComponent, PropertySelectorComponent];
-const EXPORTABLES = [BtnGroupComponent, PropertySelectorComponent];
+const DECLARABLES = [PropertySelectorComponent];
+const EXPORTABLES = [PropertySelectorComponent];
 
 @NgModule({
   declarations: [

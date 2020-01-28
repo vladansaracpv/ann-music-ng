@@ -1,56 +1,18 @@
-<div class="content">
-  <!-- <nz-divider nzText="Chromatic Scale" nzOrientation="left"></nz-divider> -->
-  <div class="type">
-    <span>Accidental Type:</span>
-    <!-- <button
-      nz-button
-      nzShape="circle"
-      [nzType]="checkType('#') ? 'primary' : ''"
-      (click)="selectType('#')"
-    >
-      #
-    </button>
-    <button
-      nz-button
-      nzShape="circle"
-      [nzType]="checkType('b') ? 'primary' : ''"
-      (click)="selectType('b')"
-    >
-      b
-    </button> -->
-    <nz-radio-group
-      [(ngModel)]="type"
-      [nzButtonStyle]="'solid'"
-      class="radio-group"
-    >
-      <label nz-radio-button nzValue="#" (click)="selectType('#')">#</label>
-      <label nz-radio-button nzValue="b" (click)="selectType('b')">b</label>
-    </nz-radio-group>
-  </div>
-  <div class="notes">
-    <!-- <div nz-row>
-      <div
-        *ngFor="let note of names"
-        nz-card-grid
-        nz-col
-        [nzSpan]="2"
-        class="card-grid"
-        [routerLink]="['/notes', note]"
-        routerLinkActive="active"
-      >
-        {{ note }}
-      </div>
-    </div> -->
-    <button
-      *ngFor="let note of names"
-      nz-button
-      nzShape="circle"
-      nzSize="large"
-      nzType="primary"
-      [routerLink]="['/notes', note]"
-      routerLinkActive="active"
-    >
-      {{ note }}
-    </button>
-  </div>
+<div class="section">
+  <app-note-accidental-type
+    (typeSelected)="selectType($event)"
+  ></app-note-accidental-type>
+</div>
+<div class="section">
+  <button
+    *ngFor="let note of notes"
+    nz-button
+    class="note-btn"
+    nzShape="circle"
+    nzType="primary"
+    nzSize="large"
+    [routerLink]="note"
+  >
+    {{ note }}
+  </button>
 </div>

@@ -1,16 +1,16 @@
-import { ChordsModule } from '@modules/chords/chords.module';
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { ScalesRoutingModule } from './scales-routing.module';
-import { ScalesComponent, ScaleComponent } from './pages';
-import { ScaleEditComponent, ScaleNotesComponent } from './components';
+import { NgModule } from '@angular/core';
+import { ChordsModule } from '@modules/chords/chords.module';
 import { SharedModule } from '@shared/shared.module';
-import { ScaleChordsComponent } from './components/scale-chords/scale-chords.component';
 
+import {
+  ScaleChordsComponent, ScaleDescriptionComponent, ScaleEditComponent, ScaleNotesComponent
+} from './components';
+import { ScaleComponent, ScalesComponent } from './pages';
+import { ScalesRoutingModule } from './scales-routing.module';
 
 @NgModule({
-  declarations: [ScaleComponent, ScalesComponent, ScaleEditComponent, ScaleNotesComponent, ScaleChordsComponent],
+  declarations: [ScaleComponent, ScalesComponent, ScaleEditComponent, ScaleNotesComponent, ScaleChordsComponent, ScaleDescriptionComponent],
   imports: [
     CommonModule,
     SharedModule,

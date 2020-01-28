@@ -1,4 +1,5 @@
-import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { NOTE } from 'ann-music-note';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-note-list',
@@ -6,23 +7,14 @@ import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
   styleUrls: ['./note-list.component.scss']
 })
 export class NoteListComponent implements OnInit {
-  @Input() names: string[];
-  @Output() typeSelected = new EventEmitter<string>();
-
-  type = '#';
-
-  constructor() { }
+  notes: string[];
 
   ngOnInit() {
+    this.notes = NOTE.notes(' ');
   }
 
   selectType(type: string) {
-    this.type = type;
-    this.typeSelected.emit(type);
-  }
-
-  checkType(type: string): boolean {
-    return this.type === type;
+    this.notes = NOTE.notes(type);
   }
 
 }
