@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { SilentLogger, AppLogger, Logger, NameLogger } from './core/services';
+import { Component, Inject } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  constructor(@Inject(SilentLogger) silent: AppLogger, loger: Logger, nameLogger: NameLogger) {
+    silent.log('Hello');
+    nameLogger.log('Welcome');
+  }
 }
