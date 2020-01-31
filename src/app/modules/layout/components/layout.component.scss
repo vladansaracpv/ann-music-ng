@@ -14,7 +14,8 @@ nz-content {
 
 .inner-content {
   padding: 24px;
-  background: #fff;
+  // background: #fff;
+  background: transparent;
   min-height: calc(100% - 24px);
   margin-bottom: 24px;
 }

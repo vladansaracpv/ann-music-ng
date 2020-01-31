@@ -2,10 +2,19 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '@core/guards';
 
-import { ScaleComponent, ScalesComponent } from './pages';
+import { ScaleComponent, ScalesComponent, NewScaleComponent } from './pages';
 import { ScaleChordsResolver, ScaleResolver } from './shared';
 
 const routes: Routes = [
+  {
+    path: 'new',
+    component: NewScaleComponent
+  },
+  {
+    path: '',
+    redirectTo: 'new',
+    pathMatch: 'full'
+  },
   {
     path: '',
     component: ScalesComponent,

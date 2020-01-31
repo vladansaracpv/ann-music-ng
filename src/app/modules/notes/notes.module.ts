@@ -4,31 +4,36 @@ import { NgModule } from '@angular/core';
 import { SharedModule } from '@shared/shared.module';
 
 import {
-  NoteDistanceComponent, NoteEditComponent,
-  NoteListComponent, NoteAccidentalTypeComponent
+  NoteComponent, NoteDistanceComponent, NoteEditComponent,
+  NoteListComponent, NoteAccidentalTypeComponent,
 } from './components';
 import { NotesRoutingModule } from './notes-routing.module';
-import { NoteComponent, NotesComponent } from './pages';
-import { HertzPipe } from './shared';
+import { NoteDetailComponent, NotesComponent } from './pages';
+import { HertzPipe, ChangeColorDirective } from './shared';
 
 const DECLARABLES = [
   NotesComponent,
-  NoteComponent,
+  NoteDetailComponent,
   NoteListComponent,
   NoteEditComponent,
   NoteDistanceComponent,
-  HertzPipe
+  NoteEditComponent,
+  NoteAccidentalTypeComponent,
+  NoteComponent,
+  HertzPipe,
+  ChangeColorDirective
 ];
 
 @NgModule({
   declarations: [
     ...DECLARABLES,
-    NoteEditComponent,
-    NoteAccidentalTypeComponent,
   ],
   imports: [
     SharedModule,
     NotesRoutingModule,
   ],
+  exports: [
+    ...DECLARABLES
+  ]
 })
 export class NotesModule { }

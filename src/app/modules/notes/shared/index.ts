@@ -1,5 +1,8 @@
 // Shared
 
+// Directives
+export * from './change-color.directive';
+
 // Pipes
 export * from './hertz.pipe';
 

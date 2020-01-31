@@ -8,13 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NoteListComponent implements OnInit {
   notes: string[];
+  allNotes = ['C', 'C#', 'Db', 'D', 'D#', 'Eb', 'E', 'F', 'F#', 'Gb', 'G', 'G#', 'Ab', 'A', 'A#', 'Bb', 'B'];
+  showAltered = false;
 
   ngOnInit() {
-    this.notes = NOTE.notes(' ');
+    this.notes = this.names(' ');
+  }
+
+  names(type: string) {
+    return this.allNotes.filter(n => type.includes(n[1] || ' '));
   }
 
   selectType(type: string) {
-    this.notes = NOTE.notes(type);
+    this.notes = this.names(type);
   }
+
+  trackByItems(index: number): number { return index; }
 
 }

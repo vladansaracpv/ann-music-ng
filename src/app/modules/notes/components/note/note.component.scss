@@ -1,0 +1,40 @@
+.note {
+  width: 100px;
+  height: 100px;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0px 0px 50px 0px rgba(201, 216, 226, 0.5);
+  border-radius: 10px;
+  cursor: pointer;
+
+  -webkit-transition: 300ms ease-in-out;
+  -moz-transition: 300ms ease-in-out;
+  -o-transition: 300ms ease-in-out;
+  transition: 300ms ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  span {
+    font-size: 2rem;
+  }
+}
+
+.altered {
+  border-radius: 50%;
+}
+
+.black {
+  background-color: #000;
+  color: #fff;
+}
+
+.white {
+  background-color: #fff;
+  color: #000;
+}

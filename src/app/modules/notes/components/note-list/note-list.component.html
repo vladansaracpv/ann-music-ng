@@ -4,15 +4,7 @@
   ></app-note-accidental-type>
 </div>
 <div class="section">
-  <button
-    *ngFor="let note of notes"
-    nz-button
-    class="note-btn"
-    nzShape="circle"
-    nzType="primary"
-    nzSize="large"
-    [routerLink]="note"
-  >
-    {{ note }}
-  </button>
+  <div class="notes">
+    <app-note *ngFor="let note of notes" [note]="note"></app-note>
+  </div>
 </div>

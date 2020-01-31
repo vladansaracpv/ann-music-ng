@@ -3,11 +3,11 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { NoteProps } from 'ann-music-note';
 
 @Component({
-  selector: 'app-note',
-  templateUrl: './note.component.html',
-  styleUrls: ['./note.component.scss']
+  selector: 'app-note-detail',
+  templateUrl: './note-detail.component.html',
+  styleUrls: ['./note-detail.component.scss']
 })
-export class NoteComponent implements OnInit {
+export class NoteDetailComponent implements OnInit {
   title: string;
   returnUrl: string;
   note: NoteProps;

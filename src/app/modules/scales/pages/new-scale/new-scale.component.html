@@ -1,0 +1,21 @@
+<div class="section">
+  <nz-select [(ngModel)]="selectedValue">
+    <nz-option
+      *ngFor="let note of notes"
+      [nzValue]="note"
+      [nzLabel]="note"
+    ></nz-option>
+  </nz-select>
+  <button nz-button nzType="primary" (click)="createNoteComponent()">
+    Add
+  </button>
+  <button nz-button nzType="danger" (click)="clearNotes()">
+    Clear
+  </button>
+</div>
+
+<div class="section">
+  <div class="notes">
+    <ng-template ad-host></ng-template>
+  </div>
+</div>

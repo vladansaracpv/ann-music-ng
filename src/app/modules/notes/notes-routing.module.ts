@@ -1,8 +1,7 @@
 // Routed module
-import { NoteEditComponent } from './components';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NoteComponent, NotesComponent } from './pages';
+import { NoteDetailComponent, NotesComponent } from './pages';
 import { NoteResolver } from './shared';
 
 const routes: Routes = [
@@ -13,7 +12,7 @@ const routes: Routes = [
     children: [
       {
         path: ':id',
-        component: NoteComponent,
+        component: NoteDetailComponent,
         data: { title: 'Notes', returnUrl: '/notes' },
         resolve: { note: NoteResolver },
       },
